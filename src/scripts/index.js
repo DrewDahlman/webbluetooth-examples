@@ -11,6 +11,7 @@ const Bluetooth = {
   },
 };
 
+// User action required to make request
 document.querySelector("#ble-selector").addEventListener("click", () => {
   Bluetooth.init();
 });

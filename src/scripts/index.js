@@ -3,10 +3,9 @@ import "regenerator-runtime/runtime";
 const Bluetooth = {
   init: async () => {
     let device = null;
-    let characteristic = null;
 
     device = await navigator.bluetooth.requestDevice({
-      acceptAllDevices: true,
+      acceptAllDevices: true, // Connect to anything
     });
     console.log(device);
   },

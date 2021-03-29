@@ -1,0 +1,41 @@
+/* Colors */
+$black: #222222;
+$white: #ffffff;
+$ocBlue: #edf0f1;
+$buttonBlue: #5272fa;
+$lightBlue: #1791eb;
+$blackBlue: #2e353b;
+$babyBlue: #0bdaff;
+$rustOrange: #e34e17;
+$mustard: #ffd00b;
+
+$regular: 400;
+$medium: 500;
+
+/* Media Queries */
+$xs-phone: "(max-width: 321px)";
+$phone: "(min-width: 813px)";
+$tablet: "(min-width: 813px)";
+$tablet-portrait: "(min-width: 813px) and (orientation: portrait)";
+$tablet-landscape: "(min-width: 768px) and (orientation: landscape)";
+$desktop: "(min-width: 1025px)";
+$average-desktop: "(min-width: 1240px)";
+$largest-screens: "(min-width: 2000px)";
+$short-desktop: "(max-height: 800px)";
+$mobile: "(max-width: 1024px)";
+
+/* Timing */
+$speed: 333ms;
+$speed-metal: 666ms;
+$transition-delay: 333ms;
+$slide-title-delay: 0s;
+
+/* Easing */
+$ease-in: cubic-bezier(0.55, 0.055, 0.666, 0.19);
+$ease-out: cubic-bezier(0.237, 0.666, 0.333, 1);
+$evil-ease: cubic-bezier(0.666, 0, 0.237, 1);
+$elegant-ease: cubic-bezier(0.18, 0.58, 0.19, 1);
+
+/* Sizing */
+$max_width: 1920px;
+$min_width: 320px;

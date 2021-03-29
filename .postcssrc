@@ -1,0 +1,9 @@
+{
+  "modules": true,
+  "autoprefixer": true,
+  "plugins": {
+    "postcss-import": {
+      "stylelint": {}
+    },
+  }
+}

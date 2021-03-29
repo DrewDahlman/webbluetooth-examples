@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@500&display=swap");
+@import "./reset";
+@import "./vars";
+@import "./utils";
+
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body {
+  font-family: "Karla", -apple-system;
+  font-weight: 500;
+  font-style: normal;
+  background-size: cover;
+  font-size: 20px;
+  background-color: $white;
+  width: 100vw;
+  height: 90vh;
+  // overflow: hidden;
+}
+
+* {
+  user-select: none;
+}
+
+h1 {
+  // font-size: 55px;
+  @include fluid-type($min_width, $max_width, 25px, 55px);
+  margin-bottom: 15px;
+
+  @include respond-to($tablet) {
+    margin-bottom: 25px;
+  }
+  user-select: none;
+}
+
+p {
+  // font-size: 20px;
+  @include fluid-type($min_width, $max_width, 15px, 20px);
+  // line-height: 30px;
+  line-height: 1.2rem;
+  margin-bottom: 35px;
+  user-select: none;
+
+  @include respond-to($tablet) {
+    margin-bottom: 55px;
+  }
+}
+
+:global {
+  #app {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .button {
+    position: relative;
+    min-width: 150px;
+    background-color: $buttonBlue;
+    border-radius: 10px;
+    padding: 15px 35px;
+    color: $white;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+    outline: none;
+    border: none;
+    @include fluid-type($min_width, $max_width, 15px, 20px);
+
+    &:hover {
+      background-color: $lightBlue;
+    }
+
+    @include respond-to($tablet) {
+      padding: 25px 55px;
+    }
+  }
+}

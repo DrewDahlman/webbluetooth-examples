@@ -8,21 +8,19 @@ const handleNotifications = (event) => {
 
   // 1. Convert & parse
   // Result: Gibberish & nonsense
-  // if( value.byteLength == 8 ){
-  //     const eventInt8Array = new Int8Array(value.buffer);
-  //     const eventData = utf8decoder.decode(eventInt8Array);
-  //     console.log(eventData);
-  //     console.log(value.getUint8(0))
-  // }
+  // const eventInt8Array = new Int8Array(value.buffer);
+  // const eventData = utf8decoder.decode(eventInt8Array);
+  // console.log(eventData);
+  // console.log(value.getUint8(0))
 
   // 2. Try decode method
-  // let a = [];
-  // for (let i = 0; i < value.byteLength; i++) {
-  //     let val = ("00" + value.getUint8(i).toString(16)).slice(-2);
-  //     a.push(val);
-  // }
-  // console.log(`Length: ${value.byteLength}`);
-  // console.log(`Name Hex: ${a.join(" ")}`);
+  //   let a = [];
+  //   for (let i = 0; i < value.byteLength; i++) {
+  //       let val = ("00" + value.getUint8(i).toString(16)).slice(-2);
+  //       a.push(val);
+  //   }
+  //   console.log(`Length: ${value.byteLength}`);
+  //   console.log(`Name Hex: ${a.join(" ")}`);
 };
 
 const Bluetooth = {

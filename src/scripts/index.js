@@ -5,14 +5,15 @@ const Bluetooth = {
     let device = null;
 
     // Define service
-    const batteryServiceUUID = "0000180f-0000-1000-8000-00805f9b34fb";
-    const batteryCharacteristicUUID = "00002a19-0000-1000-8000-00805f9b34fb";
+    const unknownServiceServiceUUID = "0000180a-0000-1000-8000-00805f9b34fb";
+    const unknownServiceCharacteristicUUID =
+      "00002a24-0000-1000-8000-00805f9b34fb";
 
     // https://developer.mozilla.org/en-US/docs/Web/API/Bluetooth/requestDevice
     // Make use of filters to select specific device(s)
     device = await navigator.bluetooth.requestDevice({
       filters: [{ name: "iPad" }], // Filter by name
-      optionalServices: [batteryServiceUUID], // Specify services
+      optionalServices: [unknownServiceServiceUUID], // Specify services
     });
 
     // Connect to gatt server
@@ -20,28 +21,36 @@ const Bluetooth = {
     console.log("Connected to server");
 
     // Get a service
-    const batteryService = await server.getPrimaryService(batteryServiceUUID);
-    console.log(batteryService);
+    const unknownServiceService = await server.getPrimaryService(
+      unknownServiceServiceUUID
+    );
+    console.log(unknownServiceService);
 
     // Get charactistics
-    const batteryCharacteristic = await batteryService.getCharacteristic(
-      batteryCharacteristicUUID
+    const unknownServiceCharacteristic = await unknownServiceService.getCharacteristic(
+      unknownServiceCharacteristicUUID
     );
 
     // Read the characteristic
-    const batteryValue = await batteryCharacteristic.readValue();
+    const unknownServiceValue = await unknownServiceCharacteristic.readValue();
 
-    // Read the value & Log
-    console.log("> Battery Level is " + batteryValue.getUint8(0) + "%");
+    // Parse the unknownServiceValue
+    console.log(unknownServiceValue);
 
-    // If we wanted to we could listen to the battery
-    batteryCharacteristic.addEventListener(
-      "characteristicvaluechanged",
-      (event) => {
-        const value = event.target.value;
-        console.log("> Battery Level is " + batteryValue.getUint8(0) + "%");
-      }
-    );
+    // 1. Read the byteLength
+    // console.log(`Length: ${unknownServiceValue.byteLength}`); // Result: 8
+
+    // 2. Create a textDecoder
+    // https://developer.mozilla.org/en-US/docs/Web/API/TextDecoder
+    // const utf8decoder = new TextDecoder();
+
+    // 3. Convert to an Int8Array ( 8bytes )
+    // const unknownServiceIntArray = new Int8Array(unknownServiceValue.buffer);
+    // console.log(unknownServiceIntArray);
+
+    // 4. Decode the Int8Array to utf8
+    // const unknownService = utf8decoder.decode(unknownServiceIntArray);
+    // console.log(unknownService);
   },
 };
 

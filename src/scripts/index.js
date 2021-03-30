@@ -40,17 +40,30 @@ const Bluetooth = {
     // 1. Read the byteLength
     // console.log(`Length: ${unknownServiceValue.byteLength}`); // Result: 8
 
-    // 2. Create a textDecoder
+    // 2. Create hexadecimal (optional)
+    // Loop the bytes and get the value by index and convert to string
+    // let a = [];
+    // for (let i = 0; i < unknownServiceValue.byteLength; i++) {
+    //     let val = ("00" + unknownServiceValue.getUint8(i).toString(16)).slice(-2);
+    //     a.push(val);
+    // }
+    // console.log(`Length: ${unknownServiceValue.byteLength}`);
+    // console.log(`Name Hex: 0x${a.join("")}`) // result: 0x69506164382c3132
+
+    // 3. Create a textDecoder
     // https://developer.mozilla.org/en-US/docs/Web/API/TextDecoder
     // const utf8decoder = new TextDecoder();
 
-    // 3. Convert to an Int8Array ( 8bytes )
+    // 4. Convert to an Int8Array ( 8bytes )
     // const unknownServiceIntArray = new Int8Array(unknownServiceValue.buffer);
     // console.log(unknownServiceIntArray);
 
-    // 4. Decode the Int8Array to utf8
+    // 5. Decode the Int8Array to utf8
     // const unknownService = utf8decoder.decode(unknownServiceIntArray);
     // console.log(unknownService);
+
+    // WTF is that?
+    // https://gist.github.com/adamawolf/3048717
   },
 };
 

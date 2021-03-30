@@ -39,7 +39,7 @@ const Bluetooth = {
       "characteristicvaluechanged",
       (event) => {
         const value = event.target.value;
-        console.log("> Battery Level is " + batteryValue.getUint8(0) + "%");
+        console.log("> Battery Level is " + value.getUint8(0) + "%");
       }
     );
   },
